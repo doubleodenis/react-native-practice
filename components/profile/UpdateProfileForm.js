@@ -4,7 +4,7 @@ import { Formik, Field } from 'formik';
 import PropTypes from 'prop-types';
 
 import { TextInputField } from '../shared/FormFields';
-import { updateProfileValidationRules } from '../../validation /profile';
+import { updateProfileValidationRules } from '../../validation/profile';
 import $t from 'i18n';
 
 export const UpdateProfileForm = props => (
