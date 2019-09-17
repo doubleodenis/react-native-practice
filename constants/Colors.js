@@ -10,5 +10,7 @@ export default {
   warningBackground: '#EAEB5E',
   warningText: '#666804',
   noticeBackground: tintColor,
-  noticeText: '#fff'
+  noticeText: '#fff',
+  headerBackground: '#37718E',
+  headerColor: '#FFFEEE'
 };

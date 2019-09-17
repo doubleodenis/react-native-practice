@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Button, View } from 'react-native';
+import { Icon } from 'react-native-elements';
 import PropTypes from 'prop-types';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { connect } from 'react-redux';
@@ -11,7 +12,14 @@ import { signInErrorSelector } from '../../store/selectors/ErrorSelector';
 
 class SignInScreen extends React.Component {
   static navigationOptions = {
-    title: $t('auth.signIn')
+    title: $t('auth.signIn'),
+    headerStyle: {
+      backgroundColor: '#f4511e'
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold'
+    }
   };
 
   static propTypes = {
@@ -40,6 +48,13 @@ class SignInScreen extends React.Component {
     return (
       <View style={styles.container}>
         <KeyboardAwareScrollView enableOnAndroid>
+          <Icon
+            containerStyle={styles.containerStyle}
+            size={75}
+            name="heartbeat"
+            type="font-awesome"
+            color="#f50"
+          />
           <SignInForm onSubmit={this.onSubmit} signInError={signInError} />
 
           <Button title="Sign in with Facebook!" onPress={facebookLogin} />
@@ -73,5 +88,8 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
     flex: 1
+  },
+  containerStyle: {
+    margin: 15
   }
 });
